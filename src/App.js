@@ -9,6 +9,7 @@ function App() {
         <div className="App">
             <Header />
             <Reports />
+            <span>learn react</span>
         </div>
     );
 }

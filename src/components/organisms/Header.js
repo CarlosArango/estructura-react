@@ -19,7 +19,7 @@ const Header = () => {
         >
             <div style={{ flex: 1 }} />
             {menuItems.map((text) => {
-                return <MenuItem textItem={text} />;
+                return <MenuItem key={text} textItem={text} />;
             })}
         </div>
     );
