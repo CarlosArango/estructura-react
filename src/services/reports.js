@@ -1,5 +1,5 @@
 const getReportsFromDateRange = async () => {
-  return fetch();
+    return fetch();
 };
 
 export default getReportsFromDateRange();
