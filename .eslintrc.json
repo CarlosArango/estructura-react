@@ -1,23 +1,25 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "jest": true
-  },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
     },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": ["react"],
-  "rules": {
-    "quotes": "off",
-    "react/jsx-filename-extension": "off",
-    "react/function-component-definition": "off",
-    "arrow-body-style": "off",
-    "react/prop-types": "off"
-  }
+    "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react"],
+    "rules": {
+        "quotes": ["error", "single"],
+        "react/jsx-filename-extension": "off",
+        "react/function-component-definition": "off",
+        "arrow-body-style": "off",
+        "react/prop-types": "off",
+        "class-methods-use-this": "off",
+        "no-return-await": "off"
+    }
 }
