@@ -10,7 +10,7 @@ class ReportRepositoryImpl extends ReportRepository {
     }
 
     async getUsersReport() {
-        return await this.httpClient.get('/api/reports/1');
+        return await this.httpClient.get('/api/reports/users');
     }
 }
 export default ReportRepositoryImpl;
