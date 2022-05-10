@@ -1,5 +1,6 @@
 /* eslint-disable no-debugger */
-import React from 'react';
+import React, { useEffect } from 'react';
+import ReportRepositoryImpl from '../data/repository/report_repository_impl';
 /* import http from '../../../infrastructure/http';
 import ReportRepositoryImpl from '../data/repository/report_repository_impl';
  */
@@ -29,12 +30,24 @@ const reducer = (state, action) => {
 
 const Reports = () => {
     const [state, dispatch] = React.useReducer(reducer, initialUser);
+    const [users, setUsers] = React.useState([]);
+
+    const getUsersReport = async () => {
+        const repositoryReports = new ReportRepositoryImpl();
+        const usersList = await repositoryReports.getUsersReport();
+        setUsers(usersList);
+    };
+
+    useEffect(() => {
+        getUsersReport();
+    }, []);
 
     return (
         <div>
             <input
                 name="username"
                 value={`${state.name}`}
+                type="number"
                 onChange={(e) => {
                     dispatch({
                         type: 'SET_USERNAME',
@@ -54,6 +67,13 @@ const Reports = () => {
                     });
                 }}
             />
+            {users.map((user) => {
+                return (
+                    <div key={user.name}>
+                        <h1>{user.name}</h1>
+                    </div>
+                );
+            })}
         </div>
     );
 };

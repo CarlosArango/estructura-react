@@ -3,10 +3,6 @@ class ReportEntity {
         this.id = id;
         this.name = name;
     }
-
-    get id() {
-        return this.id;
-    }
 }
 
 export default ReportEntity;
